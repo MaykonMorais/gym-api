@@ -7,7 +7,9 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "start": "node build/server.js",
-    "build": "tsup src --out-dir build"
+    "build": "tsup src --out-dir build",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "devDependencies": {
     "@eslint/js": "9.39.2",
@@ -20,7 +22,9 @@
     "tsup": "^8.5.1",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "8.53.1"
+    "typescript-eslint": "8.53.1",
+    "vite-tsconfig-paths": "6.0.5",
+    "vitest": "4.0.18"
   },
   "dependencies": {
     "@prisma/adapter-pg": "7.3.0",
