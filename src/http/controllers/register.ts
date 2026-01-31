@@ -30,6 +30,6 @@ export async function register(
       });
     }
 
-    response.status(500).send();
+    throw error;
   }
 }
