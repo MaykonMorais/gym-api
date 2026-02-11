@@ -19,13 +19,13 @@ describe("Validate Check-in Use Case", () => {
   });
 
   it("should be able to validate the check-in", async () => {
-    const checkIn = await checkInRepository.create({
+    const createdCheckIn = await checkInRepository.create({
       gym_id: "gym-01",
       user_id: "user-01",
     });
 
-    await sut.execute({
-      checkInId: checkIn.id,
+    const { checkIn } = await sut.execute({
+      checkInId: createdCheckIn.id,
     });
 
     expect(checkIn.validated_at).toEqual(expect.any(Date));
