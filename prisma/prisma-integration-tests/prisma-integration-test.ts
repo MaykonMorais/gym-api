@@ -19,7 +19,7 @@ export default <Environment>{
   name: "prisma",
   viteEnvironment: "ssr",
   setup: async () => {
-    const id = randomUUID();
+    const id = `test_${randomUUID().replace(/-/g, "")}`;
     const databaseUrl = generateDatabaseUrl(id);
 
     process.env.DATABASE_URL = databaseUrl;
