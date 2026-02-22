@@ -9,17 +9,18 @@ export default defineConfig({
         extends: true,
         test: {
           name: "unit",
-          include: ["./src/use-cases/*.spec.ts"],
+          dir: "./src/use-cases",
         },
       },
       {
         extends: true,
         test: {
           name: "e2e",
-          include: ["./src/http/controllers/*.spec.ts"],
-          setupFiles: [
+          pool: "forks",
+          dir: "./src/http/controllers",
+          setupFiles: ["./src/http/controllers/helpers/setup.ts"],
+          environment:
             "./prisma/prisma-integration-tests/prisma-integration-test.ts",
-          ],
         },
       },
     ],
