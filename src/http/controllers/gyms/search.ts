@@ -18,5 +18,7 @@ export async function search(request: FastifyRequest, response: FastifyReply) {
     page,
   });
 
-  return response.status(200).send(gyms);
+  return response.status(200).send({
+    gyms,
+  });
 }
