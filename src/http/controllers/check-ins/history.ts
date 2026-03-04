@@ -17,5 +17,5 @@ export async function history(request: FastifyRequest, response: FastifyReply) {
     page,
   });
 
-  return response.status(200).send(checkIns);
+  return response.status(200).send({ checkIns });
 }
