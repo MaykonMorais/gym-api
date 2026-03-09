@@ -23,6 +23,7 @@ jobs:
         with:
           node-version: 24
       - run: yarn install --frozen-lockfile
+      - run: npx prisma generate
       - run: yarn test:e2e
         env:
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
