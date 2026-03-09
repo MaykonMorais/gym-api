@@ -13,9 +13,9 @@ jobs:
         ports:
           - 5432:5432
         env:
-          POSTGRES_USERNAME: ${{ secrets.POSTGRES_USERNAME }}
-          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
-          POSTGRES_DATABASE: ${{ secrets.POSTGRES_DATABASE }}
+          POSTGRES_USERNAME: "docker"
+          POSTGRES_PASSWORD: "docker"
+          POSTGRES_DATABASE: "apisolid"
 
     steps:
       - uses: actions/checkout@v6
@@ -26,5 +26,5 @@ jobs:
       - run: npx prisma generate
       - run: yarn test:e2e
         env:
-          JWT_SECRET: ${{ secrets.JWT_SECRET }}
-          DATABASE_URL: ${{ secrets.JWT_SECRET }}
+          JWT_SECRET: "testing"
+          DATABASE_URL: "postgresql://docker:docker@localhost:5432/api-solid-pg"
